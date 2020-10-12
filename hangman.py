@@ -141,7 +141,7 @@ def cele_mai_intalnite_litere_6(cuvant , cuvant_de_gasit, incercari):
     return cuvant_ghicit, incercari
 
 def cele_mai_intalnite_litere_7(cuvant , cuvant_de_gasit, incercari):
-    cele_mai_des_intalnite_litere = ('xk').upper()
+    cele_mai_des_intalnite_litere = ('xkywq').upper()
     cuvant_flag = ''
     cuvant_ghicit = ''
     while sorted(cuvant_flag) != sorted(cele_mai_des_intalnite_litere):
@@ -180,7 +180,6 @@ def main():
         cuvant_de_gasit = cuvant_de_gasit.rstrip('\n')
         count_final = cele_mai_des_intalnite_litere_1(cuvant, cuvant_de_gasit)[2]
         if count_final >= len(cuvant_de_gasit) * procent:
-            print(cuvant)
             cuvant_ghicit = cuvant_de_gasit
         cuvant_ghicit += cele_mai_des_intalnite_litere_1(cuvant, cuvant_de_gasit)[0]
         numarul_incercarilor = 0
@@ -192,7 +191,6 @@ def main():
             cuvant_ghicit = cele_mai_des_intalnite_litere_2(cuvant , cuvant_de_gasit ,numarul_incercarilor)[0]
             count_final = cele_mai_des_intalnite_litere_2(cuvant , cuvant_de_gasit , numarul_incercarilor)[2]
             if count_final >= len(cuvant_de_gasit) * procent:
-                print(cuvant)
                 cuvant_ghicit = cuvant_de_gasit
 
             if cuvant_ghicit != cuvant_de_gasit:
@@ -201,7 +199,6 @@ def main():
                 cuvant_ghicit += cele_mai_des_intalnite_litere_3(cuvant, cuvant_de_gasit, numarul_incercarilor)[0]
                 count_final = cele_mai_des_intalnite_litere_3(cuvant, cuvant_de_gasit, numarul_incercarilor)[2]
                 if count_final >= len(cuvant_de_gasit) * procent:
-                    print(cuvant)
                     cuvant_ghicit = cuvant_de_gasit
 
                 if cuvant_ghicit != cuvant_de_gasit:
@@ -225,7 +222,8 @@ def main():
                                 cuvant_ghicit += cele_mai_intalnite_litere_7(cuvant, cuvant_de_gasit, numarul_incercarilor)[0]
 
         total_numar_incercari += numarul_incercarilor
-        print(cuvant_ghicit , total_numar_incercari)
+        print(cuvant_ghicit)
+        print("Numarul incercrailor este: ",total_numar_incercari )
 
 if __name__ == '__main__':
     main()
